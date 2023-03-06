@@ -678,7 +678,7 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  21.73
+    #define DEFAULT_Kp  21.73  //get values from EEPROM (NL 6/3/23)
     #define DEFAULT_Ki   1.54
     #define DEFAULT_Kd  76.55
   #endif
@@ -763,7 +763,7 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 41.78
+  #define DEFAULT_bedKp 41.78  //get values from EEPROM (NL 6/3/23)
   #define DEFAULT_bedKi 7.32
   #define DEFAULT_bedKd 158.93
 
@@ -835,14 +835,14 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 90 //NL updated 6/3/23 to allow loading of filament
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 600
+#define EXTRUDE_MAXLENGTH 300 //NL 6/3/23 Approx length of bowden etc from extruder
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -2311,16 +2311,22 @@
 // Preheat Constants - Up to 10 are supported without changes
 //
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 185
-#define PREHEAT_1_TEMP_BED     45
-#define PREHEAT_1_TEMP_CHAMBER 35
+#define PREHEAT_1_TEMP_HOTEND 215
+#define PREHEAT_1_TEMP_BED     60
+#define PREHEAT_1_TEMP_CHAMBER 0
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "ABS"
+#define PREHEAT_2_LABEL       "PETG"
 #define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED    110
-#define PREHEAT_2_TEMP_CHAMBER 35
+#define PREHEAT_2_TEMP_BED    70
+#define PREHEAT_2_TEMP_CHAMBER 0
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
+
+#define PREHEAT_3_LABEL       "TPU"
+#define PREHEAT_3_TEMP_HOTEND 230
+#define PREHEAT_3_TEMP_BED    50
+#define PREHEAT_3_TEMP_CHAMBER 0
+#define PREHEAT_3_FAN_SPEED   255 // Value from 0 to 255
 
 // @section motion
 
