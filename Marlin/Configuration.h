@@ -1554,7 +1554,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 8, 21, 1.2 } // NL 14/3/23 for Klackender Change z-offset to suit
+#define NOZZLE_TO_PROBE_OFFSET { 8, 21, -2.9 } // NL 23/3/23 *updated Z offset* for Klackender Change z-offset to suit
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
