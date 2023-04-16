@@ -1452,8 +1452,8 @@
  */
 #define MAG_MOUNTED_PROBE // NL 14/3/23 for Klackender
 #if ENABLED(MAG_MOUNTED_PROBE)
-  #define PROBE_DEPLOY_FEEDRATE (133*60)  // (mm/min) Probe deploy speed
-  #define PROBE_STOW_FEEDRATE   (133*60)  // (mm/min) Probe stow speed
+  #define PROBE_DEPLOY_FEEDRATE (150*60)  // (mm/min) Probe deploy speed NL increased from 133 17/4/23
+  #define PROBE_STOW_FEEDRATE   (150*60)  // (mm/min) Probe stow speed NL increased from 133 17/4/23
 
   #define MAG_MOUNTED_DEPLOY_1 { PROBE_DEPLOY_FEEDRATE, { 245, 114, 20 } }  // Move to side Dock & Attach probe
   #define MAG_MOUNTED_DEPLOY_2 { PROBE_DEPLOY_FEEDRATE, { 200, 114, 20 } }  // Move probe off dock
@@ -2194,7 +2194,7 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (4*60) }
+#define HOMING_FEEDRATE_MM_M { (30*60), (30*60), (6*60) } //NL increased from {20, 20, 4} 17/4/23
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
